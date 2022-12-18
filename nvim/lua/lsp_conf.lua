@@ -22,7 +22,7 @@ require('mason-lspconfig').setup_handlers({ function(server)
             vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
             vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
             vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-            vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+            vim.keymap.set('n', '<space>fmt', function() vim.lsp.buf.format { async = true } end, bufopts)
         end,
         --lsp_flags
         lsp_flags = {
@@ -34,28 +34,34 @@ require('mason-lspconfig').setup_handlers({ function(server)
     require('lspconfig')[server].setup(opt)
 end })
 
-require('mason-lspconfig').setup()
-require("mason-null-ls").setup({
-    automatic_setup = true,
-})
+-- require('mason-lspconfig').setup()
+
+local null_ls = require('null-ls')
+null_ls.setup()
+
+-- require("mason-null-ls").setup({
+--     ensure_installed = { "sumeneko_lua", "pyright", "clangd", "marksman" }
+-- })
+
+require('fidget').setup()
 
 --diagnostic setting
-vim.diagnostic.config({
-    virtual_text = false,
-    signs = true,
-    underline = true,
-    float = false,
-    update_in_insert = true,
-    severity_sort = true,
-})
+-- vim.diagnostic.config({
+--     virtual_text = false,
+--     signs = true,
+--     underline = true,
+--     float = false,
+--     update_in_insert = true,
+--     severity_sort = true,
+-- })
 
 -- diagnostic mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+-- local opts = { noremap = true, silent = true }
+-- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+-- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 -- print diagnostics in floating window
 -- You will likely want to reduce updatetime which affects CursorHold

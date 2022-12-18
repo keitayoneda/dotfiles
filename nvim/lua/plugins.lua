@@ -14,7 +14,8 @@ return require('packer').startup(function(use)
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use 'jose-elias-alvarez/null-ls.nvim'
-    use 'jayp0521/mason-null-ls.nvim'
+    -- use 'jayp0521/mason-null-ls.nvim'
+    use 'j-hui/fidget.nvim'
 
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -28,12 +29,12 @@ return require('packer').startup(function(use)
     --show info in status line
     use {
         'nvim-lualine/lualine.nvim',
-        config = function() require'lualine_conf'end,
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        config = function() require 'lualine_conf' end,
+        requires = { 'kyazdani42/nvim-web-devicons' }
     }
 
     --markdown preview
-    use{
+    use {
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
@@ -42,14 +43,17 @@ return require('packer').startup(function(use)
 
     --filer
     use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} },
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' } },
     }
 
     --git
     use 'tpope/vim-fugitive'
+    use 'airblade/vim-gitgutter'
 
     --comment out
     use 'tpope/vim-commentary'
+
+    --pair bracker
 
 end)
