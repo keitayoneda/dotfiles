@@ -37,10 +37,10 @@ return require('packer').startup(function(use)
     }
 
     --markdown preview
-    -- use({
-    --     "iamcco/markdown-preview.nvim",
-    --     run = function() vim.fn["mkdp#util#install"]() end,
-    -- })
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
     --filer
     use {
