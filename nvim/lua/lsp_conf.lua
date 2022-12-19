@@ -34,34 +34,41 @@ require('mason-lspconfig').setup_handlers({ function(server)
     require('lspconfig')[server].setup(opt)
 end })
 
--- require('mason-lspconfig').setup()
+require('mason-lspconfig').setup()
 
 local null_ls = require('null-ls')
-null_ls.setup()
+null_ls.setup({ sources = {
+    null_ls.builtins.formatting.autopep8,
+    null_ls.builtins.formatting.cmake_format,
+    null_ls.builtins.formatting.clang_format,
+    null_ls.builtins.formatting.markdownlint,
+    null_ls.builtins.formatting.prettier,
+} })
 
--- require("mason-null-ls").setup({
---     ensure_installed = { "sumeneko_lua", "pyright", "clangd", "marksman" }
--- })
+require("mason-null-ls").setup({
+    ensure_installed = { "sumeneko_lua", "pyright", "clangd", "marksman" }
+})
 
 require('fidget').setup()
 
---diagnostic setting
--- vim.diagnostic.config({
---     virtual_text = false,
---     signs = true,
---     underline = true,
---     float = false,
---     update_in_insert = true,
---     severity_sort = true,
--- })
+-- diagnostic
+-- setting
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = true,
+    underline = true,
+    float = false,
+    update_in_insert = true,
+    severity_sort = true,
+})
 
 -- diagnostic mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- local opts = { noremap = true, silent = true }
--- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
--- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
--- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
--- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 -- print diagnostics in floating window
 -- You will likely want to reduce updatetime which affects CursorHold
