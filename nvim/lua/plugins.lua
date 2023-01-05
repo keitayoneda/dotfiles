@@ -4,9 +4,18 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     --powerfull syntax highlight
-    use 'nvim-treesitter/nvim-treesitter'
+    use { 'nvim-treesitter/nvim-treesitter',
+        config = function() require('nvim-treesitter.configs').setup {
+                ensure_installed = "all",
+                auto_install = true,
+                highlight = {
+                    enable = true
+                }
+            }
+        end }
     --colorscheme
     use 'jacoborus/tender.vim'
+    use { "ellisonleao/gruvbox.nvim" }
 
     --lsp & completion plugins
     --the lsp&cmp setting file is lua/lsp_conf.lua
@@ -42,10 +51,19 @@ return require('packer').startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
-    --filer
+    --telescope
     use {
         'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } },
+        config = function() require('telescope_conf') end,
+    }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        config = function() require('nvim-tree').setup() end,
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
     }
 
     --git
@@ -58,4 +76,11 @@ return require('packer').startup(function(use)
     --pair bracker
     use 'jiangmiao/auto-pairs'
 
+    --quickrun
+    use { "is0n/jaq-nvim", config = function() require 'quickrun_conf' end }
+
+    --texvim
+    use { 'lervag/vimtex', config = function() require 'vimtex_conf' end }
+    --doxygen
+    use { 'vim-scripts/DoxygenToolkit.vim', config = function() require 'doxygen_conf' end }
 end)

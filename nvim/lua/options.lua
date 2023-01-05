@@ -11,4 +11,4 @@ vim.cmd([[
   augroup end
 ]])
 
-vim.cmd([[colorscheme tender]])
+vim.cmd([[colorscheme gruvbox]])
