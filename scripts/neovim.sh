@@ -3,10 +3,11 @@
 sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen git
 
 #install latest node,npm
-sudo apt-get -y install nodejs npm
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
 sudo npm install -g n
-sudo n stable
-sudo apt-get purge nodejs npm
+sudo n latest
+sudo apt-get purge -y nodejs
 
 git clone https://github.com/neovim/neovim
 cd neovim 
