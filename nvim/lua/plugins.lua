@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
     --     end }
     --colorscheme
     use 'jacoborus/tender.vim'
-    use { "ellisonleao/gruvbox.nvim" }
+    use "ellisonleao/gruvbox.nvim"
 
     --lsp & completion plugins
     --the lsp&cmp setting file is lua/lsp_conf.lua
