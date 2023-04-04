@@ -27,4 +27,3 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 PS1="\[\033[1;32m\]\u@\h\[\033[1;32m\] \[\033[34m\]\w\[\033[1;31m\]$(__git_ps1 " (%s)")\[\033[31m\]\n>\[\e[m " ' >> ~/.bashrc
-source ~/.bashrc
