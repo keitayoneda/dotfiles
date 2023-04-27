@@ -83,4 +83,7 @@ return require('packer').startup(function(use)
   use { 'lervag/vimtex', config = function() require 'vimtex_conf' end }
   --doxygen
   use { 'vim-scripts/DoxygenToolkit.vim', config = function() require 'doxygen_conf' end }
+
+  --copilot
+  use 'github/copilot.vim'
 end)

@@ -1,20 +1,32 @@
-vim.cmd [[
-	let mapleader="\<Space>"
-	inoremap jj <ESC>:w<CR>
-	nnoremap <Tab> :bn<CR>
-	nnoremap <S-Tab> :bp<CR>
-	nnoremap <Leader>x :bw<CR>
+local function map(mode, lhs, rhs, opts)
+  local options = { noremap = true }
+  if opts then options = vim.tbl_extend('force', options, opts) end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
 
-    nnoremap j gj
-    nnoremap k gk
-    nnoremap <Down> gj
-    nnoremap <Up> gk
-    inoremap <Down> <C-o>gj
-    inoremap <Up> <C-o>gk
-    
+vim.g.mapleader = ' '
+map('i', 'jj', '<ESC>:w<CR>')
+map('n', '<leader>q', ':q<CR>')
+map('n', '<leader>w', ':w<CR>')
+map('n', '<leader>W', ':wq<CR>')
+map('n', '<leader>Q', ':q!<CR>')
+map('n', '<leader>h', ':set hlsearch!<CR>')
+map('n', '<Tab>', ':bn<CR>')
+map('n', '<S-Tab>', ':bp<CR>')
+map('n', '<leader>x', ':bw<CR>')
+map('n', 'j', 'gj')
+map('n', 'k', 'gk')
+map('n', '<Down>', 'gj')
+map('n', '<Up>', 'gk')
+map('i', '<Down>', '<C-o>gj')
+map('i', '<Up>', '<C-o>gk')
 
-	nnoremap <Leader>ff :Telescope find_files<CR>
-	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-	nnoremap <leader>fb <cmd>Telescope buffers<cr>
-	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-	]]
+map('n', '<leader>ff', ':Telescope find_files<CR>')
+map('n', '<leader>fg', ':Telescope live_grep<CR>')
+map('n', '<leader>fb', ':Telescope buffers<CR>')
+map('n', '<leader>fh', ':Telescope help_tags<CR>')
+map('n', '<leader>fc', ':Telescope commands<CR>')
+map('n', '<leader>fm', ':Telescope marks<CR>')
+map('n', '<leader>fr', ':Telescope registers<CR>')
+map('n', '<leader>ft', ':Telescope treesitter<CR>')
+map('n', '<leader>fs', ':Telescope lsp_document_symbols<CR>')
