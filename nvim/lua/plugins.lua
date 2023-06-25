@@ -4,15 +4,15 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- powerfull syntax highlight
-  use { 'nvim-treesitter/nvim-treesitter',
-    config = function() require('nvim-treesitter.configs').setup {
-        ensure_installed = "all",
-        auto_install = true,
-        highlight = {
-          enable = true
-        }
-      }
-    end }
+  -- use { 'nvim-treesitter/nvim-treesitter',
+  --   config = function() require('nvim-treesitter.configs').setup {
+  --       ensure_installed = "all",
+  --       auto_install = true,
+  --       highlight = {
+  --         enable = true
+  --       }
+  --     }
+  --   end }
   --colorscheme
   use 'jacoborus/tender.vim'
   use "ellisonleao/gruvbox.nvim"
@@ -27,8 +27,10 @@ return require('packer').startup(function(use)
     'jose-elias-alvarez/null-ls.nvim',
     requires = { ('nvim-lua/plenary.nvim') }
   }
-  use 'j-hui/fidget.nvim'
-
+  use {
+    'j-hui/fidget.nvim',
+    tag = 'legacy'
+  }
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -42,7 +44,8 @@ return require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     config = function() require 'lualine_conf' end,
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = { 'nvim-tree/nvim-web-devicons', 'folke/trouble.nvim'
+    }
   }
 
   --markdown preview

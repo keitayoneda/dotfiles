@@ -17,3 +17,8 @@ vim.cmd([[
 
 vim.cmd "colorscheme gruvbox"
 vim.cmd "set clipboard=unnamedplus"
+
+vim.g.mkdp_auto_close = 0
+
+vim.o.encoding = "utf-8"
+vim.o.fileencodings = "utf-8"

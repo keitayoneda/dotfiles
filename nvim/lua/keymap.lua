@@ -21,7 +21,7 @@ map('n', '<Up>', 'gk')
 map('i', '<Down>', '<C-o>gj')
 map('i', '<Up>', '<C-o>gk')
 
-map('n', '<leader>ff', ':Telescope find_files<CR>')
+map('n', '<leader>fp', ':Telescope find_files<CR>')
 map('n', '<leader>fg', ':Telescope live_grep<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fh', ':Telescope help_tags<CR>')
@@ -30,3 +30,9 @@ map('n', '<leader>fm', ':Telescope marks<CR>')
 map('n', '<leader>fr', ':Telescope registers<CR>')
 map('n', '<leader>ft', ':Telescope treesitter<CR>')
 map('n', '<leader>fs', ':Telescope lsp_document_symbols<CR>')
+
+map('n', '<leader>gdiff', ':GitGutterDiffOrig<CR>')
+map('n', '<leader>h[', ':GitGutterNextHunk<CR>')
+map('n', '<leader>h]', ':GitGutterPrevHunk<CR>')
+
+map('n', '<leader>md', ':MarkdownPreviewToggle<CR>')
