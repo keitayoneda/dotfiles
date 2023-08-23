@@ -13,10 +13,14 @@ git clone https://github.com/neovim/neovim
 cd neovim 
 make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=${HOME}/.local
 make install
+echo "export PATH=\$PATH:${HOME}/.local/bin" >> ${HOME}/.bashrc
 
 #clone packer.nvim
 git clone https://github.com/wbthomason/packer.nvim \
   ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
+
+# install ripgrep
+sudo apt-get install ripgrep
 
 #setting up init.nvim
 cd ${HOME}
