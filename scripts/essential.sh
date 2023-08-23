@@ -6,10 +6,8 @@ sudo apt-get upgrade -y
 
 sudo apt-get install -y wget curl vim nano tmux rsync
 sudo apt-get install -y bash-completion
-sudo apt-get install -y build-essential libstdc++-11-dev ninja-build
+sudo apt-get install -y build-essential ninja-build
 sudo apt-get install -y automake gcc cmake
-sudo apt-get install -y glibc-source glibc-tools
-sudo apt-get install -y doxygen graphviz
 
 #show git branch name on prompt
 curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ${HOME}/.git-completion.sh
