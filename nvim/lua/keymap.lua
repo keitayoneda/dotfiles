@@ -1,7 +1,7 @@
 local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+	local options = { noremap = true }
+	if opts then options = vim.tbl_extend('force', options, opts) end
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 vim.g.mapleader = ' '
@@ -36,3 +36,19 @@ map('n', '<leader>h[', ':GitGutterNextHunk<CR>')
 map('n', '<leader>h]', ':GitGutterPrevHunk<CR>')
 
 map('n', '<leader>md', ':MarkdownPreviewToggle<CR>')
+
+map('n', '<leader>j', ':Jaq')
+
+-- vim.api.nvim_set_keymap('n', '<F5>', ':DapContinue<CR>', { silent = true })
+-- vim.api.nvim_set_keymap('n', '<F10>', ':DapStepOver<CR>', { silent = true })
+-- vim.api.nvim_set_keymap('n', '<F11>', ':DapStepInto<CR>', { silent = true })
+-- vim.api.nvim_set_keymap('n', '<F12>', ':DapStepOut<CR>', { silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>b', ':DapToggleBreakpoint<CR>', { silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>B',
+-- 	':lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Breakpoint condition: "))<CR>', { silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>lp',
+-- 	':lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', { silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>dr', ':lua require("dap").repl.open()<CR>', { silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>dl', ':lua require("dap").run_last()<CR>', { silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>dd', ':lua require("dapui").toggle()<CR>', {})
