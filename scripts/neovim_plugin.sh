@@ -4,6 +4,7 @@ git clone https://github.com/wbthomason/packer.nvim \
 
 # setting up init.nvim
 cd ${HOME}
-mkdir ${HOME}/.config
+if [ ! -d ${HOME}/.config ]; then
+  mkdir ${HOME}/.config 
 ln -s ${HOME}/dotfiles/nvim ${HOME}/.config/nvim
 
