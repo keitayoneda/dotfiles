@@ -6,14 +6,6 @@ vim.o.tabstop = 2
 vim.o.mouse = a
 vim.o.termguicolors = true
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost lua/plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
-
-vim.cmd "colorscheme gruvbox"
 vim.cmd "set clipboard+=unnamedplus"
 
 vim.g.mkdp_auto_close = 0

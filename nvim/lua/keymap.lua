@@ -21,7 +21,7 @@ map('n', '<Up>', 'gk')
 map('i', '<Down>', '<C-o>gj')
 map('i', '<Up>', '<C-o>gk')
 
-map('n', '<leader>fp', ':Telescope find_files<CR>')
+map('n', '<leader>ff', ':Telescope find_files<CR>')
 map('n', '<leader>fg', ':Telescope live_grep<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fh', ':Telescope help_tags<CR>')
@@ -38,17 +38,5 @@ map('n', '<leader>h]', ':GitGutterPrevHunk<CR>')
 map('n', '<leader>md', ':MarkdownPreviewToggle<CR>')
 
 map('n', '<leader>j', ':Jaq')
-
--- vim.api.nvim_set_keymap('n', '<F5>', ':DapContinue<CR>', { silent = true })
--- vim.api.nvim_set_keymap('n', '<F10>', ':DapStepOver<CR>', { silent = true })
--- vim.api.nvim_set_keymap('n', '<F11>', ':DapStepInto<CR>', { silent = true })
--- vim.api.nvim_set_keymap('n', '<F12>', ':DapStepOut<CR>', { silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>b', ':DapToggleBreakpoint<CR>', { silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>B',
--- 	':lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Breakpoint condition: "))<CR>', { silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>lp',
--- 	':lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', { silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>dr', ':lua require("dap").repl.open()<CR>', { silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>dl', ':lua require("dap").run_last()<CR>', { silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>dd', ':lua require("dapui").toggle()<CR>', {})
