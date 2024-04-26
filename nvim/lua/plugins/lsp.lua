@@ -12,11 +12,14 @@ return {
 		config=function ()
 			local lspconfig = require("lspconfig")
 			capabilities = require("cmp_nvim_lsp").default_capabilities()
-			opt = {
+			clangd_opt = {
 				capabilities = capabilities
 			}
-			lspconfig["clangd"].setup({opt})
-			lspconfig["pyright"].setup({opt})
+			pyright_opt = {
+				capabilities = capabilities
+			}
+			lspconfig["clangd"].setup({clangd_opt})
+			lspconfig["pyright"].setup({pyright_opt})
 			vim.api.nvim_create_autocmd("LspAttach", {
 					callback = function(_)
 						vim.keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
