@@ -1,9 +1,9 @@
-#!/usr/bin/sh
+#!/usr/bin/zsh
 
 if [! -d ${HOME}/.config]; then
 	mkdir ${HOME}/.config
 fi
 
-pushd ${HOME}/.config
+cd ${HOME}/.config
 ln -s ${HOME}/dotfiles/nvim nvim
-popd 
+cd ${HOME}/dotfiles/scripts 
