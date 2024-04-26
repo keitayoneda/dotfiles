@@ -9,3 +9,5 @@
 ./scripts/install_neovim.sh
 
 ./scripts/install_neovim_plugin.sh
+
+./scripts/install_nerdfont.sh
