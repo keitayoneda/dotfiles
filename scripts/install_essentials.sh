@@ -17,3 +17,6 @@ sudo apt-get install -y build-essential ninja-build cmake
 
 # install tmux
 sudo apt-get install -y tmux
+
+# install unzip
+sudo apt-get install -y unzip
