@@ -1,6 +1,8 @@
-#!/usr/bin/zsh
+#!/usr/bin/sh
 
-if [[! -d ${HOME}/.config]] then
+if [[ -d ${HOME}/.config]] then
+	echo "${HOME}/.config exists"
+else
        	mkdir ${HOME}/.config
 fi
 cd ${HOME}/.config
