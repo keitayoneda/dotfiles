@@ -43,8 +43,11 @@ if ! is_git_repo "${HOME}/.fzf"; then
 	~/.fzf/install
 fi
 
+# install direnv
+sudo apt install direnv
+
 # pluginに追加
-plugins_to_add="zsh-autosuggestions zsh-completions zsh-syntax-highlighting"
+plugins_to_add="direnv zsh-autosuggestions zsh-completions zsh-syntax-highlighting"
 current_plugins=$(grep "^plugins=(" "$HOME/.zshrc" | sed 's/^plugins=(//' | sed 's/)//')
 
 if [[ -n "$current_plugins" ]]; then
