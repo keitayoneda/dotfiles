@@ -40,3 +40,5 @@ map('n', '<leader>md', ':MarkdownPreviewToggle<CR>')
 map('n', '<leader>j', ':Jaq')
 
 vim.api.nvim_set_keymap('n', '<leader>dd', ':lua require("dapui").toggle()<CR>', {})
+
+vim.api.nvim_set_keymap( 'n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>", {noremap = true, silent = true})
