@@ -1,4 +1,5 @@
 #nvim
 nvim/plugin
+nvim/lazy-lock.json
 scripts/neovim
 
