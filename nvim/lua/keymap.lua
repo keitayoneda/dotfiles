@@ -42,3 +42,6 @@ map('n', '<leader>j', ':Jaq')
 vim.api.nvim_set_keymap('n', '<leader>dd', ':lua require("dapui").toggle()<CR>', {})
 
 vim.api.nvim_set_keymap( 'n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<leader>r', 'y:%s/<C-r>"//g<Left><Left>', { noremap = true, silent = false })
+vim.api.nvim_set_keymap('n', '<leader>do', ':DiffviewOpen<CR>', { noremap = true, silent = false })
+vim.api.nvim_set_keymap('n', '<leader>dc', ':DiffviewClose<CR>', { noremap = true, silent = false })
