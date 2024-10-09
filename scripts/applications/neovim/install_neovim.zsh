@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # extract tar.gz
 # wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
@@ -18,3 +20,8 @@ echo "alias nvim='${HOME}/nvim-linux64/bin/nvim'" >> ${HOME}/.zshrc
 
 # remove nvim-linux64
 rm -i nvim-linux64.tar.gz
+
+# install neovim plugins
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+zsh ${SCRIPTPATH}/install_neovim_plugins.zsh

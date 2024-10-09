@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# install oh-my-zsh
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+
 # 対象のディレクトリが存在してかつgitレポジトリだったら0 を返す関数
 is_git_repo() {
     local dir="$1"

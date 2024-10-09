@@ -1,13 +1,11 @@
 #!/usr/bin/sh
 
-./scripts/install_essentials.sh
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
 
-./scripts/install_zsh.sh
+bash ${SCRIPTPATH}/scripts/install_essentials.sh 
 
-./scripts/install_zsh_plugin.sh
+bash ${SCRIPTPATH}/scripts/applications/zsh/install_zsh.sh
 
-./scripts/install_neovim.sh
-
-./scripts/install_neovim_plugin.sh
-
-./scripts/install_nerdfont.sh
+# (below scripts use zsh)
+zsh ${SCRIPTPATH}/scripts/applications/neovim/install_neovim.zsh
