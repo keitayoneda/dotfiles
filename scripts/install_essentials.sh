@@ -20,3 +20,7 @@ sudo apt-get install -y tmux
 
 # install unzip
 sudo apt-get install -y unzip
+
+# mozc
+sudo apt-get install -y ibus-mozc
+sudo apt-get install -y mozc-utils-gui
