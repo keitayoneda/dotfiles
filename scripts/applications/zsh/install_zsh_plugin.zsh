@@ -1,7 +1,10 @@
 #!/usr/bin/env zsh
 
 # install oh-my-zsh
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+wget wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+sed -i.tmp 's:env zsh::g' install.sh # dont enter zsh after install zsh
+sed -i.tmp 's:chsh -s .*$::g' install.sh # avoid password input in change shell
+sh install.sh
 
 
 # 対象のディレクトリが存在してかつgitレポジトリだったら0 を返す関数
@@ -61,3 +64,6 @@ else
 fi
 
 sed -i "s/^plugins=([^)]*)/$plugins/" $HOME/.zshrc
+
+# change default shell to zsh
+chsh -s $(which zsh)

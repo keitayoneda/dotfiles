@@ -24,4 +24,4 @@ rm -i nvim-linux64.tar.gz
 # install neovim plugins
 SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
-zsh ${SCRIPTPATH}/install_neovim_plugins.zsh
+zsh ${SCRIPTPATH}/install_neovim_plugin.zsh
