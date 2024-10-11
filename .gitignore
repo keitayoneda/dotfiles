@@ -2,4 +2,5 @@
 nvim/plugin
 nvim/lazy-lock.json
 scripts/neovim
+nvim-linux64/
 

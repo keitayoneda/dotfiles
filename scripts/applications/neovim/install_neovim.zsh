@@ -19,7 +19,7 @@ echo "alias nvim='${HOME}/nvim-linux64/bin/nvim'" >> ${HOME}/.zshrc
 
 
 # remove nvim-linux64
-rm -i nvim-linux64.tar.gz
+rm nvim-linux64.tar.gz
 
 # install neovim plugins
 SCRIPT=$(readlink -f "$0")
