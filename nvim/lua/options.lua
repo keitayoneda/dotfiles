@@ -12,3 +12,9 @@ vim.g.mkdp_auto_close = 0
 
 vim.o.encoding = "utf-8"
 vim.o.fileencodings = "utf-8"
+
+-- colorscheme
+vim.cmd "colorscheme kanagawa"
+
+-- number
+vim.wo.number = true

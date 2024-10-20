@@ -1,7 +1,5 @@
-require('keymap')
-require('options')
-
-
+-- First, load lazy
+vim.g.mapleader = " " -- set leader key before loading lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -42,3 +40,6 @@ require("lazy").setup("plugins", {
   }
 })
 
+-- load keymap and options
+require('keymap')
+require('options')
