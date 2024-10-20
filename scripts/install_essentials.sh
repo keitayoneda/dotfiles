@@ -28,3 +28,8 @@ sudo apt-get install -y mozc-utils-gui
 # clangd
 sudo apt-get install -y clangd-12
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
+
+# git
+sudo apt-add-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get upgrade git -y
