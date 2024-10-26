@@ -10,3 +10,5 @@ bash ${SCRIPTPATH}/scripts/applications/zsh/install_zsh.sh
 zsh ${SCRIPTPATH}/scripts/applications/nodejs.zsh
 
 zsh ${SCRIPTPATH}/scripts/applications/neovim/install_neovim_all.zsh
+
+zsh ${SCRIPTPATH}/scripts/applications/tmux/tmux.zsh
