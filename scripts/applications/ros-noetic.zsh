@@ -16,6 +16,5 @@ sudo apt update
 
 sudo apt install ros-noetic-desktop-full -y
 
+# enable auto load ROS environment
 echo "source /opt/ros/noetic/setup.zsh" >> ~/.zshrc
-
-
